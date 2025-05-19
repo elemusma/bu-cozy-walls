@@ -1,0 +1,1 @@
+export const Company = "Cozy Wall Foam Insulation";
