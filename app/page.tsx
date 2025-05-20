@@ -54,6 +54,39 @@ export default function Home() {
   return (
     <>
     <Nav />
+    <section className="relative w-full pt-[260px] pb-[260px]">
+<div
+  className="absolute w-full h-full z-[1] top-0 left-0"
+  style={{
+    background: 'linear-gradient(0deg, rgba(27, 56, 100, 1) 0%, rgba(255, 255, 255, 0) 45%)'
+  }}
+></div>
+<Image 
+          src="/photos/Cozy-Wall-Foam-Insulation.jpg" 
+          alt="Injection Spray Foam Insulation" 
+          fill
+          objectFit="cover" 
+          className="opacity-75 top-0 left-0 z-0"
+        />
+<div className="bg-[#bb854b] absolute w-full mix-blend-multiply h-[175px] top-[215px]"></div>
+      <div className="relative w-full h-full">
+        
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div> */}
+        <div className="relative inset-0 flex flex-col justify-center items-center text-white px-4 text-center space-y-4">
+
+          <div className="relative py-2 px-4 rounded-lg w-full">
+            <h1 className="text-2xl md:text-4xl font-bold">INJECTION SPRAY FOAM INSULATION</h1>
+            <p className="text-base md:text-lg italic mt-2">Wrap Your Home in Comfort Year-Round with Expert Exterior Wall Insulation</p>
+          </div>
+
+        </div>
+      </div>
+            <div className="w-3/4 absolute bottom-10 right-0 z-[1]">
+            <p className="text-3xl uppercase text-white lg:pl-[100px]">Modern Technology</p>
+            <div className="border-t border-[var(--accent-tertiary)] w-full"></div>
+            <p className="text-3xl uppercase text-white">Old Fashioned Values</p>
+          </div>
+    </section>
       <ContentBlock
         sectionClassName="pt-[50px]"
         containerClassName="max-w-screen-lg mx-auto py-3"

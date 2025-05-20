@@ -93,9 +93,10 @@ export default function Navigation() {
               </div>
               <div className="lg:w-1/4 w-5/12 md:pl-4">
                 <ButtonSquare
-                  className="lg:hidden flex justify-center items-center text-sm text-center" // Adding additional class
+                  className="lg:hidden !flex justify-center items-center text-sm text-center w-full" // Adding additional class
                   style={{
                     padding: "10px 10px",
+                    fontSize: "12px",
                   }} // Adding inline style
                   id="" // Adding an ID
                   href="/get-estimate" // Dynamic href

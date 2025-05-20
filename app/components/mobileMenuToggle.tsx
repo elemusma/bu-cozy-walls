@@ -44,19 +44,19 @@ const MobileMenuToggle = () => {
       {isModalOpen && (
         <div
           id="mobileMenu"
-          className={`modal mobile-menu ${isModalOpen ? "active" : ""}`}
+          className={`modal-custom mobile-menu ${isModalOpen ? "active" : ""}`}
           style={{ display: "block" }}
         >
           {/* Modal Content */}
           <div
-            className="bg-white modal-content-menu modal-content"
+            className="bg-white modal-content-menu modal-content-custom"
             style={{
               background: "",
               paddingTop: "50px",
             }}
           >
             {/* Close Button */}
-            <span className="close" id="navMenuClose" onClick={handleClose}>
+            <span className="close-custom" id="navMenuClose" onClick={handleClose}>
               &times;
             </span>
 
@@ -74,14 +74,13 @@ const MobileMenuToggle = () => {
             <div className="h-[25px]"></div>
             <ButtonSquare
               className="" // Adding additional class
-              style={{ top: "50%", right: 0, transform: "translate(0, -50%)" }} // Adding inline style
+              style={{ }} // Adding inline style
               id="" // Adding an ID
               href="/get-estimate" // Dynamic href
               onClick={handleClose}
             >
               Free Estimate!
             </ButtonSquare>
-            <div className="h-[25px]"></div>
             <div className="w-full lg:w-1/3 text-right flex justify-start">
               <SocialIcons />
             </div>

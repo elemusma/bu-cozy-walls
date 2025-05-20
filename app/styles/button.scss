@@ -1,6 +1,6 @@
 .btn-main, button.btn-main {
-    background-color: var(--accent-primary);
-    border:1px solid var(--accent-primary);
+    background-color: var(--accent-tertiary);
+    border:1px solid var(--accent-tertiary);
     padding: 5px 15px;
     display: inline-block;
     border-radius: 25px;
@@ -17,7 +17,7 @@
     &:hover {
         background-color: white;
         border-color:var(--accent-primary);
-        color:var(--accent-primary);
+        color:var(--accent-primary) !important;
     }
     &.square {
         border-radius:0px;
@@ -25,11 +25,11 @@
     &.white {
         background-color: white;
         border-color: var(--neutral-dark);
-        color:var(--neutral-dark);
+        color:var(--neutral-dark)!important;
         &:hover {
             background-color: var(--neutral-dark)!important;
             border-color:white;
-            color:white;
+            color:white!important;
         }
     }
 }
