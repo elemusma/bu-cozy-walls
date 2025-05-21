@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "./styles/popup.scss";
 import "./styles/button.scss";
+import "./fonts/font-proxima-nova/font-proxima-nova.css";
+import "./fonts/font-aspira/font-aspira.css";
+import "./styles/fonts.scss";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

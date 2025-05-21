@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/pvj4rrm.css");
 @import "tailwindcss";
 
 :root {
@@ -40,6 +41,7 @@
   background-color: var(--accent-primary);
   color: #fff;
 }
+
 
 /* @theme inline {
   --color-background: var(--background);

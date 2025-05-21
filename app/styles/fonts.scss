@@ -1,0 +1,51 @@
+p {
+    font-family: 'proxima_nova_altlight';
+}
+h1 {
+font-family: 'proxima_novaregular';
+letter-spacing:.2em;
+}
+// h2 {
+//     font-size: 2rem;
+//     font-weight: 700;
+//     line-height: 1.5;
+// }
+
+.text-accent {
+    color: var(--accent-tertiary);
+}
+
+
+.minion-pro-italic {
+font-family: "minion-pro", serif;
+font-weight: 700;
+font-style: italic;
+}
+
+.font-aspira-black {
+    font-family: 'aspirablack';
+}
+.font-aspira-bold {
+    font-family: 'aspirabold';
+}
+.font-aspira-regular {
+    font-family: 'aspiraregular';
+}
+.font-aspira-light {
+    font-family: 'aspiralight';
+}
+.font-aspira-thin {
+    font-family: 'aspirathin';
+}
+.font-proxima-light {
+    font-family: 'proxima_nova_altlight';
+}
+.font-proxima-thin {
+    font-family: 'proxima_nova_altthin';
+}
+.font-proxima {
+    font-family: 'proxima_novaregular';
+}
+.font-proxima-bold {
+    font-family: 'proxima_novabold';
+}

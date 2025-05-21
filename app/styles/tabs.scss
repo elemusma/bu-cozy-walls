@@ -20,9 +20,10 @@
   
     /* Tab Titles */
     .tab-title {
-      background: #ddd;
-      color: #454545;
+      background: #dcdddf;
+      color: var(--accent-primary);
       border-radius: 0;
+      border: none;
       padding: 30px 40px;
       font-weight: 700;
       position: relative;
@@ -33,7 +34,7 @@
   
     .tab-title.activeTabButtonClassName {
       pointer-events: none;
-      background: #2b322a;
+      background: var(--accent-primary);
       color: white;
     }
   

@@ -77,7 +77,7 @@ export default function Navigation() {
         }}
       >
         <nav className="relative">
-          <div className="hidden lg:block max-w-screen-lg mx-auto">
+          <div className="hidden lg:block">
             <NavItems />
           </div>
           <div className="block lg:hidden max-w-screen-lg mx-auto pl-4">

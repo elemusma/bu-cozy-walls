@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import "../styles/nav-items.scss";
 import "../styles/nav.scss";
 import Logo from "./logo";
@@ -10,14 +10,14 @@ import ButtonSquare from "./buttons/btn-square";
 
 export default function NavItems({ logoContainerClassName = "" }) {
     // const pathname = usePathname(); // Get the current route
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const handleToggle = () => {
-      setIsModalOpen((prevState) => !prevState);
-    };
+    // const [isModalOpen, setIsModalOpen] = useState(false);
+    // const handleToggle = () => {
+    //   setIsModalOpen((prevState) => !prevState);
+    // };
   
-    const handleClose = () => {
-      setIsModalOpen(false);
-    };
+    // const handleClose = () => {
+    //   setIsModalOpen(false);
+    // };
 
   const menuRef = useRef<boolean>(false);
   // const router = useRouter();
@@ -96,11 +96,9 @@ export default function NavItems({ logoContainerClassName = "" }) {
         </div>
 
         <div className="lg:w-5/6 w-7/12 lg:order-3 order-3 flex lg:justify-end items-center justify-center">
-          <ul className="main-menu m-0">
-            <li className="main-title relative text-left">
-              <Link
+        <Link
                 href={`tel:+1${Phone}`}
-                className={`flex items-center gap-1 uppercase ${
+                className={`flex items-center gap-1 uppercase font-proxima-bold tracking-[.2em] text-xl px-4 ${
                   pathname.startsWith("/news")
                     ? "text-accent font-bold active-with-children"
                     : ""
@@ -109,14 +107,16 @@ export default function NavItems({ logoContainerClassName = "" }) {
               >
                 {Phone} 
               </Link>
+          {/* <ul className="main-menu m-0">
+            <li className="relative text-left">
+              
             </li>
-          </ul>
+          </ul> */}
           <ButtonSquare
               className="" // Adding additional class
               style={{ }} // Adding inline style
               id="" // Adding an ID
               href="/get-estimate" // Dynamic href
-              onClick={handleClose}
             >
               Book Your Free Estimate
             </ButtonSquare>
