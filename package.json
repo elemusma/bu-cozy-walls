@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
+    "motion": "^12.12.1",
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sass": "^1.89.0"
+    "sass": "^1.89.0",
+    "swiper": "^11.2.7",
+    "yet-another-react-lightbox": "^3.23.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

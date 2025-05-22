@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Tabs, {Tab} from "@/app/components/reusable/tabs";
 import ContentBlock from "@/app/components/reusable/content-block";
@@ -5,8 +6,55 @@ import Nav from "./components/nav";
 import Link from "next/link";
 import './styles/home.scss';
 import './styles/fonts.scss';
+import { Phone } from "./components/globals";
+import SwiperCarouselGallery from "./components/swiperCarouselGallery";
+import { useEffect } from "react";
+import * as motion from "motion/react-client";
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay:custom, duration: 0.8, ease: "easeOut" },
+  }),
+};
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -50 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay:custom, duration: 0.8, ease: "easeOut" },
+  }),
+};
+const fadeInRight = {
+  hidden: { opacity: 0, x: 50 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay:custom, duration: 0.8, ease: "easeOut" },
+  }),
+};
 
 export default function Home() {
+useEffect(() => {
+  const aspectRatio = 560 / 315;
+
+  const resizeIframes = () => {
+    const iframes = document.querySelectorAll<HTMLIFrameElement>("iframe");
+    iframes.forEach((iframe) => {
+      iframe.style.height = `${iframe.offsetWidth / aspectRatio}px`;
+    });
+  };
+
+  resizeIframes(); // Initial resize
+  window.addEventListener("resize", resizeIframes);
+
+  return () => {
+    window.removeEventListener("resize", resizeIframes);
+  };
+}, []);
+
+  
   const tabsData: Tab[] = [
   {
     title: "RESIDENTIAL",
@@ -86,6 +134,12 @@ export default function Home() {
 <div className="bg-[#bb854b] absolute w-full mix-blend-multiply h-full top-0 pointer-events-none"></div>
         
         {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div> */}
+        <motion.div
+        variants={fadeUpVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <div className="relative inset-0 flex flex-col justify-center items-center text-white px-4 text-center space-y-4">
 
           <div className="relative py-2 px-4 rounded-lg w-full">
@@ -94,12 +148,27 @@ export default function Home() {
           </div>
 
         </div>
+        </motion.div>
       </div>
             <div className="w-full relative z-[1] md:mt-[125px] mt-[50px] pb-[25px]">
               <div className="md:w-3/4 w-full ml-auto">
+              <motion.div
+        variants={fadeInLeft}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
             <p className="text-3xl uppercase text-white md:pl-[100px] pl-[75px] tracking-[.1em]">Modern Technology</p>
+            </motion.div>
             <div className="my-2 border-t-4 border-[var(--accent-tertiary)] w-full"></div>
+            <motion.div
+        variants={fadeInRight}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
             <p className="text-3xl uppercase text-white md:pl-[0px] pl-[25px] tracking-[.1em]">Old Fashioned Values</p>
+      </motion.div>
             </div>
           </div>
     </section>
@@ -108,6 +177,12 @@ export default function Home() {
 <div className="max-w-screen-lg mx-auto py-3 px-4">
   <div className="flex flex-wrap relative">
     <div className="md:w-1/12 w-1/6 px-4">
+    <motion.div
+        variants={fadeUpVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
     <Image
   src="/photos/About-Perfection.jpg"
   alt="Injection Spray Foam Insulation"
@@ -115,17 +190,58 @@ export default function Home() {
   height={200}
   className="w-[50px] h-[200px] object-contain object-top" // Ensures strict sizing
 />
+  </motion.div>
 
     </div>
-    <div className="md:w-3/12 w-2/3 px-4">
+    <div className="md:w-4/12 w-2/3 px-4">
+    <motion.div
+        variants={fadeUpVariants}
+        custom={.2} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
     <Link href="#about" className="block clip-custom-shape mb-2 uppercase font-proxima-bold italic">ABOUT OUR TEAM</Link>
+    </motion.div>
+    <motion.div
+        variants={fadeUpVariants}
+        custom={.3} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
     <Link href="#about" className="block clip-custom-shape my-2 uppercase font-proxima-bold italic">What Sets Us Apart</Link>
+      </motion.div>
+      <motion.div
+        variants={fadeUpVariants}
+        custom={.4} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
     <Link href="#about" className="block clip-custom-shape my-2 uppercase font-proxima-bold italic">Testimonials / Reviews</Link>
+      </motion.div>
+      <motion.div
+        variants={fadeUpVariants}
+        custom={.5} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
     <Link href="#about" className="block clip-custom-shape my-2 uppercase font-proxima-bold italic">Why Insulate</Link>
+      </motion.div>
     </div>
     <div className="md:w-6/12 w-full md:pt-0 pt-8 px-4">
+    <motion.div
+        variants={fadeUpVariants}
+        custom={.6} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
     <h2 className="text-accent text-4xl font-proxima-light">ABOUT OUR TEAM</h2>
     <p className="proxima-nova-thin">At the heart of our company is a team that genuinely cares — about our customers, the quality of our work, and the experience we deliver every step of the way. We are committed to providing exceptional service with professionalism, integrity, and attention to detail. Every project we undertake reflects our dedication to excellence and our unwavering focus on customer satisfaction. We don&apos;t just complete tasks — we build trust, exceed expectations, and take pride in doing things the right way.</p>
+    </motion.div>
     </div>
   </div>
 </div>
@@ -136,11 +252,25 @@ export default function Home() {
       <div className="max-w-screen-lg mx-auto py-3 px-4">
   <div className="flex flex-wrap justify-center relative">
     <div className="w-full md:w-3/4 text-center pb-4">
+    <motion.div
+        variants={fadeUpVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
       <h2 className="text-accent text-4xl font-proxima-light">WALL FOAM INSULATION SERVICES</h2>
       <p className="text-lg">Whether you&apos;re dealing with cold spots, high energy costs, or just want a more efficient home, we&apos;ve got you covered.</p>
+      </motion.div>
       </div>
       {/* start of individual service */}
       <div className="md:w-1/2 w-full relative px-4 my-4 group">
+      <motion.div
+        variants={fadeUpVariants}
+        custom={.2} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
       <div className="relative py-[100px] overflow-hidden">
       <Image
   src="/photos/Cozy-Wall-Foam-Insulation.jpg"
@@ -158,10 +288,18 @@ export default function Home() {
 </div>
       </div>
       </div>
+      </motion.div>
       </div>
       {/* end of individual service */}
       {/* start of individual service */}
      <div className="md:w-1/2 w-full relative px-4 my-4 group">
+<motion.div
+        variants={fadeUpVariants}
+        custom={.4} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
       <div className="relative py-[100px] overflow-hidden">
       <Image
   src="/photos/Cozy-Wall-Foam-Insulation.jpg"
@@ -179,10 +317,18 @@ export default function Home() {
 </div>
       </div>
       </div>
+</motion.div>
       </div>
       {/* end of individual service */}
       {/* start of individual service */}
      <div className="md:w-1/2 w-full relative px-4 my-4 group">
+     <motion.div
+        variants={fadeUpVariants}
+        custom={.2} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
       <div className="relative py-[100px] overflow-hidden">
       <Image
   src="/photos/Cozy-Wall-Foam-Insulation.jpg"
@@ -200,10 +346,18 @@ export default function Home() {
 </div>
       </div>
       </div>
+      </motion.div>
       </div>
       {/* end of individual service */}
       {/* start of individual service */}
      <div className="md:w-1/2 w-full relative px-4 my-4 group">
+          <motion.div
+        variants={fadeUpVariants}
+        custom={.4} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
       <div className="relative py-[100px] overflow-hidden">
       <Image
   src="/photos/Cozy-Wall-Foam-Insulation.jpg"
@@ -221,12 +375,20 @@ export default function Home() {
 </div>
       </div>
       </div>
+      </motion.div>
       </div>
       {/* end of individual service */}
       </div>
       </div>
     </section>
     {/* end of services section */}
+    <motion.div
+        variants={fadeUpVariants}
+        custom={.2} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
       <ContentBlock
         sectionClassName="pt-[50px]"
         containerClassName="max-w-screen-lg mx-auto py-3"
@@ -243,7 +405,15 @@ export default function Home() {
         activeTabButtonClassName="bg-blue-600 text-white activeTabButtonClassName"
         contentClassName="p-4"
       />
+</motion.div>
 
+<motion.div
+        variants={fadeUpVariants}
+        custom={.2} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
       <ContentBlock
         sectionClassName="pt-[150px]"
         containerClassName="py-3"
@@ -258,6 +428,14 @@ export default function Home() {
           className="w-full h-auto object-cover object-center"
         />
       </ContentBlock>
+      </motion.div>
+      <motion.div
+        variants={fadeUpVariants}
+        custom={.2} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
       <ContentBlock
         sectionClassName="pt-[50px]"
         containerClassName="py-3"
@@ -272,6 +450,145 @@ export default function Home() {
           className="w-full h-auto object-cover object-center"
         />
       </ContentBlock>
+      </motion.div>
+<div className="h-[50px]"></div>
+<div className="h-[50px]"></div>
+<motion.div
+        variants={fadeUpVariants}
+        custom={.2} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+      <section className="bg-[#968f8d] py-8">
+      <div className="max-w-screen-lg mx-auto py-3 px-4">
+  <div className="flex flex-wrap justify-center relative">
+    <div className="w-full md:w-3/4 text-center">
+<p className="mb-0 tracking-[.2em] text-white text-4xl"><span className="font-proxima-thin">CALL US TODAY </span><a href={`tel:+1${Phone}`} className="font-proxima-bold">{Phone}</a></p>
+    </div>
+    </div>
+    </div>
+    </section>
+    </motion.div>
+
+<div className="h-[25px]"></div>
+
+<motion.div
+        variants={fadeUpVariants}
+        custom={.2} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+<ContentBlock
+        sectionClassName="pt-[50px]"
+        containerClassName="max-w-screen-lg mx-auto py-3"
+        rowClassName="flex flex-col items-center"
+        columnClassName="w-full text-center"
+      >
+        <h2 className="text-accent text-6xl font-proxima-thin">GALLERY</h2>
+      </ContentBlock>
+    <SwiperCarouselGallery
+            slides={[
+              {imageSrc:"/photos/Cozy-Wall-Foam-Insulation.jpg", imageAlt:"Injection Spray Foam Insulation"},
+              {imageSrc:"/photos/Cozy-Wall-Foam-Insulation.jpg", imageAlt:"Injection Spray Foam Insulation"},
+              {imageSrc:"/photos/Cozy-Wall-Foam-Insulation.jpg", imageAlt:"Injection Spray Foam Insulation"},
+              {imageSrc:"/photos/Cozy-Wall-Foam-Insulation.jpg", imageAlt:"Injection Spray Foam Insulation"},
+              {imageSrc:"/photos/Cozy-Wall-Foam-Insulation.jpg", imageAlt:"Injection Spray Foam Insulation"}
+            ]}
+            sliderId="completed-projects-commercial"
+          />
+</motion.div>
+
+<motion.div
+        variants={fadeUpVariants}
+        custom={.2} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+          <ContentBlock
+        sectionClassName="pt-[50px]"
+        containerClassName="max-w-screen-lg mx-auto py-3"
+        rowClassName="flex flex-col items-center"
+        columnClassName="w-full text-center"
+        >
+        <h2 className="text-accent text-6xl font-proxima-thin">VIDEOS</h2>
+      </ContentBlock>
+        </motion.div>
+
+        <section className="py-8">
+      <div className="w-full py-3 px-4">
+  <div className="flex flex-wrap justify-center relative">
+    {/* start of col */}
+    <div className="w-full md:w-1/3 text-center px-4">
+    <motion.div
+        variants={fadeUpVariants}
+        custom={.2} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+    <iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/PSjE2iiYuQQ?si=YiEMQsdTA9IMs0rH"
+  title="YouTube video player"
+  frameBorder={0}
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen
+></iframe>
+  </motion.div>
+    </div>
+    {/* end of col */}
+    {/* start of col */}
+    <div className="w-full md:w-1/3 text-center px-4">
+    <motion.div
+        variants={fadeUpVariants}
+        custom={.4} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+    <iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/PSjE2iiYuQQ?si=YiEMQsdTA9IMs0rH"
+  title="YouTube video player"
+  frameBorder={0}
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen
+></iframe>
+  </motion.div>
+    </div>
+    {/* end of col */}
+    {/* start of col */}
+    <div className="w-full md:w-1/3 text-center px-4">
+    <motion.div
+        variants={fadeUpVariants}
+        custom={.6} // delay in seconds
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+    <iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/PSjE2iiYuQQ?si=YiEMQsdTA9IMs0rH"
+  title="YouTube video player"
+  frameBorder={0}
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen
+></iframe>
+  </motion.div>
+    </div>
+    {/* end of col */}
+    </div>
+    </div>
+    </section>
 
 
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
