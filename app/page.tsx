@@ -10,6 +10,7 @@ import { Phone } from "./components/globals";
 import SwiperCarouselGallery from "./components/swiperCarouselGallery";
 import { useEffect } from "react";
 import * as motion from "motion/react-client";
+import ContactForm from "./components/forms/ContactForm";
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: (custom: number) => ({
@@ -589,6 +590,23 @@ useEffect(() => {
     </div>
     </div>
     </section>
+
+    <ContentBlock
+        sectionClassName="relative py-[100px]"
+        containerClassName="max-w-screen-lg mx-auto"
+        rowClassName="flex flex-col items-center"
+        columnClassName="md:w-3/4 w-full relative bg-[#c2c2c2] border-8 border-white pt-10 px-5"
+        background={
+          <>
+          <div className="bg-[#eeba67] absolute top-1/2 left-0 w-full h-[60%] -translate-y-1/2"></div>
+          </>
+        }
+      >
+        <h2 className="text-4xl font-aspira-thin uppercase text-center">
+          Have a Question?
+        </h2>
+        <ContactForm />
+      </ContentBlock>
 
 
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
