@@ -99,7 +99,7 @@ export default function Navigation() {
                     fontSize: "12px",
                   }} // Adding inline style
                   id="" // Adding an ID
-                  href="/get-estimate" // Dynamic href
+                  href="/#get-estimate" // Dynamic href
                 >
                   <div className="px-2">
                     <svg
@@ -120,7 +120,7 @@ export default function Navigation() {
             className="absolute hidden md:block hover:bg-[var(--neutral-dark)]" // Adding additional class
             style={{ top: "50%", right: 0, transform: "translate(0, -50%)" }} // Adding inline style
             id="" // Adding an ID
-            href="/get-estimate" // Dynamic href
+            href="#get-estimate" // Dynamic href
           >
             Free Estimate!
           </ButtonSquare> */}

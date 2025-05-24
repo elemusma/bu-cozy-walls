@@ -2,6 +2,7 @@ import classNames from "classnames";
 
 interface ContentBlockProps {
   sectionClassName?: string;
+  sectionIDName?: string;
   containerClassName?: string;
   rowClassName?: string;
   columnClassName?: string;
@@ -11,6 +12,7 @@ interface ContentBlockProps {
 
 export default function ContentBlock({
   sectionClassName = "",
+  sectionIDName = "",
   containerClassName = "mx-auto px-4 max-w-7xl pt-5",
   rowClassName = "flex justify-center",
   columnClassName = "lg:w-10/12 text-center relative",
@@ -18,7 +20,7 @@ export default function ContentBlock({
   background,
 }: ContentBlockProps) {
   return (
-    <section className={classNames(sectionClassName)}>
+    <section className={classNames(sectionClassName)} id={sectionIDName}>
       {background}
       <div className={classNames(containerClassName)}>
         <div className={classNames(rowClassName)}>

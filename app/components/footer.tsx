@@ -356,8 +356,8 @@ export default function Footer() {
                   <ul className="list-none text-sm mt-0">
                     <li>
                       <Link
-                        href="/get-estimate"
-                        className={`py-1 block ${pathname === "/get-estimate" ? "active text-accent" : ""}`}
+                        href="#get-estimate"
+                        className={`py-1 block ${pathname === "#get-estimate" ? "active text-accent" : ""}`}
                       >
                         Get Free Estimate
                       </Link>

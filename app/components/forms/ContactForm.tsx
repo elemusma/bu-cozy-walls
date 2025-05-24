@@ -118,30 +118,23 @@ const ContactForm: React.FC = () => {
 
   return (
     <div className="relative flex items-center justify-center min-h-[60vh] bg-cover bg-center">
-      <div className="relative lg:p-10 max-w-lg w-full">
+      <div className="relative lg:p-10 w-full">
         <form
           ref={formRef}
           onSubmit={sendEmail}
           onChange={handleInputChange}
           className="space-y-4"
         >
+      <div className="flex flex-wrap">
           {/* Name Field */}
-          <div className="relative">
+          <div className="relative md:w-1/3 w-full pr-2">
             <label
               htmlFor="user_name"
-              className="block text-sm font-medium text-white"
+              className="block text-sm font-medium"
             >
               Name <span className="text-red-500">*</span>
             </label>
             <div className="relative">
-              <div className="absolute top-0 left-0 bg-white/80 w-[35px] h-full rounded-tl-md rounded-bl-md"></div>
-              <Image
-                src="/forms/Form-Name.png"
-                alt="User Icon"
-                width={20}
-                height={20}
-                className="absolute left-2 top-3"
-              />
               <input
                 type="text"
                 name="user_name"
@@ -153,22 +146,14 @@ const ContactForm: React.FC = () => {
           </div>
 
           {/* Email Field */}
-          <div className="relative">
+          <div className="relative md:w-1/3 w-full pr-2">
             <label
               htmlFor="user_email"
-              className="block text-sm font-medium text-white"
+              className="block text-sm font-medium"
             >
               Email Address <span className="text-red-500">*</span>
             </label>
             <div className="relative">
-              <div className="absolute top-0 left-0 bg-white/80 w-[35px] h-full rounded-tl-md rounded-bl-md"></div>
-              <Image
-                src="/forms/Form-Email.png"
-                alt="Email Icon"
-                width={20}
-                height={20}
-                className="absolute left-2 top-3"
-              />
               <input
                 type="email"
                 name="user_email"
@@ -180,22 +165,14 @@ const ContactForm: React.FC = () => {
           </div>
 
           {/* Phone Field */}
-          <div className="relative">
+          <div className="relative md:w-1/3 w-full">
             <label
               htmlFor="user_phone"
-              className="block text-sm font-medium text-white"
+              className="block text-sm font-medium"
             >
               Phone <span className="text-red-500">*</span>
             </label>
             <div className="relative">
-              <div className="absolute top-0 left-0 bg-white/80 w-[35px] h-full rounded-tl-md rounded-bl-md"></div>
-              <Image
-                src="/forms/Form-Phone.png"
-                alt="Phone Icon"
-                width={20}
-                height={20}
-                className="absolute left-2 top-3"
-              />
               <input
                 type="tel"
                 name="user_phone"
@@ -207,51 +184,17 @@ const ContactForm: React.FC = () => {
               />
             </div>
           </div>
-
-          {/* Email Field */}
-          <div className="relative">
-            <label
-              htmlFor="user_subject"
-              className="block text-sm font-medium text-white"
-            >
-              Subject <span className="text-red-500">*</span>
-            </label>
-            <div className="relative">
-              <div className="absolute top-0 left-0 bg-white/80 w-[35px] h-full rounded-tl-md rounded-bl-md"></div>
-              <Image
-                src="/forms/Form-Subject-Line.png"
-                alt="Subject Line"
-                width={20}
-                height={20}
-                className="absolute left-2 top-3"
-              />
-              <input
-                type="text"
-                name="user_subject"
-                className="w-full p-3 pl-12 bg-white/90 text-black border border-white placeholder-gray rounded-md"
-                placeholder="Subject"
-                required
-              />
-            </div>
           </div>
 
           {/* Message Field */}
           <div className="relative">
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-white"
+              className="block text-sm font-medium"
             >
               Message <span className="text-red-500">*</span>
             </label>
             <div className="relative">
-              <div className="absolute top-0 left-0 bg-white/80 w-[35px] h-[95%] rounded-tl-md rounded-bl-md"></div>
-              <Image
-                src="/forms/Form-Message.png"
-                alt="Message Icon"
-                width={20}
-                height={20}
-                className="absolute left-2 top-3"
-              />
               <textarea
                 name="message"
                 className="w-full p-3 pl-12 bg-white/90 border border-white placeholder-gray rounded-md min-h-[120px]"
@@ -264,14 +207,14 @@ const ContactForm: React.FC = () => {
           <div className="relative">
             <label
               htmlFor="additional_info_1"
-              className="block text-sm font-medium text-white"
+              className="block text-sm font-medium"
             >
               What is {operandA} + {operandB}?
             </label>
             <input
               type="number"
               name="additional_info_1"
-              className="w-full"
+              className="w-full bg-white/90"
               required
             />
             <input type="hidden" name="operand_a" value={operandA} />

@@ -98,11 +98,7 @@ export default function NavItems({ logoContainerClassName = "" }) {
         <div className="lg:w-5/6 w-7/12 lg:order-3 order-3 flex lg:justify-end items-center justify-center">
         <Link
                 href={`tel:+1${Phone}`}
-                className={`flex items-center gap-1 uppercase font-proxima-bold tracking-[.2em] text-xl px-4 ${
-                  pathname.startsWith("/news")
-                    ? "text-accent font-bold active-with-children"
-                    : ""
-                }`}
+                className={`flex items-center gap-1 uppercase font-proxima-bold tracking-[.2em] text-xl px-4`}
                 style={{}}
               >
                 {Phone} 
@@ -116,7 +112,7 @@ export default function NavItems({ logoContainerClassName = "" }) {
               className="" // Adding additional class
               style={{ }} // Adding inline style
               id="" // Adding an ID
-              href="/get-estimate" // Dynamic href
+              href="#get-estimate" // Dynamic href
             >
               Book Your Free Estimate
             </ButtonSquare>

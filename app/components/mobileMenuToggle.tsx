@@ -76,7 +76,7 @@ const MobileMenuToggle = () => {
               className="" // Adding additional class
               style={{ }} // Adding inline style
               id="" // Adding an ID
-              href="/get-estimate" // Dynamic href
+              href="#get-estimate" // Dynamic href
               onClick={handleClose}
             >
               Free Estimate!
@@ -172,9 +172,9 @@ const MobileMenuToggle = () => {
             <ul className="list-none text-sm mt-0">
               <li>
                 <Link
-                  href="/get-estimate"
+                  href="#get-estimate"
                   className={`block px-4 py-2 ${
-                    pathname === "/get-estimate"
+                    pathname === "#get-estimate"
                       ? "bg-white !text-[var(--neutral)] active"
                       : ""
                   }`}
@@ -245,7 +245,7 @@ const MobileMenuToggle = () => {
               className="" // Adding additional class
               style={{}} // Adding inline style
               id="" // Adding an ID
-              href="/get-estimate" // Dynamic href
+              href="#get-estimate" // Dynamic href
               onClick={handleClose}
             >
               Free Estimate!
